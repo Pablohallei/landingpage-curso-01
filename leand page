@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Do Zero ao Curso Estruturado</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Inter',sans-serif;
+}
+
+body{
+background:#050816;
+color:#fff;
+overflow-x:hidden;
+}
+
+.gradient-bg{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-1;
+background:
+radial-gradient(circle at 20% 20%, rgba(37,99,255,.25), transparent 30%),
+radial-gradient(circle at 80% 30%, rgba(255,184,0,.15), transparent 25%),
+radial-gradient(circle at 50% 80%, rgba(37,99,255,.15), transparent 30%),
+#050816;
+}
+
+.container{
+width:90%;
+max-width:1200px;
+margin:auto;
+}
+
+.hero{
+padding:100px 0;
+}
+
+.hero-content{
+display:grid;
+grid-template-columns:1fr 500px;
+gap:60px;
+align-items:center;
+}
+
+.badge{
+display:inline-block;
+padding:12px 20px;
+border-radius:999px;
+background:rgba(255,184,0,.15);
+border:1px solid rgba(255,184,0,.4);
+color:#ffb800;
+font-weight:700;
+margin-bottom:25px;
+}
+
+h1{
+font-size:68px;
+line-height:1;
+font-weight:900;
+margin-bottom:25px;
+}
+
+.highlight{
+color:#ffb800;
+}
+
+.subtitle{
+font-size:22px;
+line-height:1.7;
+color:#b8c3e4;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:20px 35px;
+border-radius:16px;
+background:linear-gradient(135deg,#ffb800,#ff8c00);
+color:#000;
+font-weight:900;
+text-decoration:none;
+font-size:18px;
+box-shadow:0 0 40px rgba(255,184,0,.35);
+transition:.3s;
+}
+
+.btn:hover{
+transform:translateY(-5px);
+box-shadow:0 0 60px rgba(255,184,0,.7);
+}
+
+.hero-image{
+position:relative;
+}
+
+.hero-image img{
+width:100%;
+border-radius:25px;
+box-shadow:
+0 0 80px rgba(37,99,255,.4),
+0 0 120px rgba(255,184,0,.15);
+}
+
+section{
+padding:100px 0;
+}
+
+.section-title{
+text-align:center;
+max-width:900px;
+margin:auto auto 60px;
+}
+
+.section-title h2{
+font-size:52px;
+margin-bottom:20px;
+}
+
+.section-title p{
+color:#b8c3e4;
+font-size:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:25px;
+}
+
+.card{
+background:rgba(255,255,255,.04);
+backdrop-filter:blur(20px);
+padding:35px;
+border-radius:24px;
+border:1px solid rgba(255,255,255,.08);
+transition:.4s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+border-color:#ffb800;
+}
+
+.card h3{
+margin-bottom:15px;
+color:#ffb800;
+}
+
+.card p{
+color:#b8c3e4;
+line-height:1.7;
+}
+
+.flow{
+display:flex;
+justify-content:center;
+align-items:center;
+flex-wrap:wrap;
+gap:20px;
+}
+
+.step{
+padding:20px 30px;
+background:#111827;
+border-radius:20px;
+font-weight:800;
+}
+
+.arrow{
+font-size:35px;
+color:#ffb800;
+}
+
+.offer{
+max-width:850px;
+margin:auto;
+text-align:center;
+background:linear-gradient(135deg,#0d1737,#111827);
+padding:60px;
+border-radius:30px;
+border:1px solid rgba(255,184,0,.3);
+}
+
+.old{
+font-size:28px;
+text-decoration:line-through;
+color:#8091bf;
+}
+
+.price{
+font-size:90px;
+font-weight:900;
+color:#ffb800;
+margin:10px 0;
+}
+
+.list{
+list-style:none;
+margin:35px 0;
+}
+
+.list li{
+margin:12px 0;
+font-size:20px;
+}
+
+.faq{
+max-width:900px;
+margin:auto;
+}
+
+details{
+background:#111827;
+padding:20px;
+border-radius:16px;
+margin-bottom:15px;
+}
+
+summary{
+cursor:pointer;
+font-weight:700;
+color:#ffb800;
+}
+
+details p{
+margin-top:15px;
+color:#b8c3e4;
+}
+
+.footer-cta{
+text-align:center;
+padding:120px 20px;
+}
+
+.footer-cta h2{
+font-size:60px;
+margin-bottom:25px;
+}
+
+.sticky{
+position:fixed;
+bottom:20px;
+left:50%;
+transform:translateX(-50%);
+background:#0d1737;
+padding:15px 20px;
+border-radius:18px;
+display:flex;
+gap:15px;
+align-items:center;
+z-index:999;
+border:1px solid rgba(255,184,0,.3);
+box-shadow:0 0 40px rgba(0,0,0,.4);
+}
+
+.sticky a{
+padding:12px 18px;
+border-radius:10px;
+background:#ffb800;
+color:#000;
+text-decoration:none;
+font-weight:800;
+}
+
+@media(max-width:1000px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+h1{
+font-size:48px;
+}
+
+.hero-image{
+max-width:450px;
+margin:auto;
+}
+
+.section-title h2{
+font-size:40px;
+}
+
+.footer-cta h2{
+font-size:42px;
+}
+
+.price{
+font-size:60px;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="gradient-bg"></div>
+
+<div class="sticky">
+<span>🔥 Oferta R$47</span>
+<a href="https://pay.kiwify.com.br/ERtxmQX">Comprar Agora</a>
+</div>
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div>
+
+<div class="badge">
+🚀 CURSO + IA + MÉTODO
+</div>
+
+<h1>
+Transforme seu conhecimento em um
+<span class="highlight">curso estruturado</span>
+pronto para vender
+</h1>
+
+<p class="subtitle">
+Pare de travar com ideias soltas.
+Aprenda um método simples para organizar módulos, aulas e toda a jornada do aluno utilizando Inteligência Artificial para acelerar o processo.
+</p>
+
+<a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
+QUERO ESTRUTURAR MEU CURSO
+</a>
+
+</div>
+
+<div class="hero-image">
+
+<img src="banner-curso.png">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Você sabe ensinar. Falta estrutura.</h2>
+<p>
+O problema não é o conteúdo. O problema é transformar conhecimento em uma experiência organizada para o aluno.
+</p>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>❌ Ideias espalhadas</h3>
+<p>Você não sabe por onde começar.</p>
+</div>
+
+<div class="card">
+<h3>❌ Conteúdo demais</h3>
+<p>Tenta ensinar tudo e trava.</p>
+</div>
+
+<div class="card">
+<h3>❌ Curso confuso</h3>
+<p>Sem sequência lógica para o aluno.</p>
+</div>
+
+<div class="card">
+<h3>❌ Sem método</h3>
+<p>Não existe uma jornada clara.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Da ideia ao curso pronto</h2>
+</div>
+
+<div class="flow">
+
+<div class="step">IDEIA</div>
+<div class="arrow">→</div>
+
+<div class="step">IA</div>
+<div class="arrow">→</div>
+
+<div class="step">ESTRUTURA</div>
+<div class="arrow">→</div>
+
+<div class="step">CURSO</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>O que você conquista</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>✅ Tema Definido</h3>
+<p>Clareza total sobre o curso.</p>
+</div>
+
+<div class="card">
+<h3>✅ Público Definido</h3>
+<p>Saiba exatamente para quem ensinar.</p>
+</div>
+
+<div class="card">
+<h3>✅ Promessa Clara</h3>
+<p>Transformação bem definida.</p>
+</div>
+
+<div class="card">
+<h3>✅ Estrutura Pronta</h3>
+<p>Módulos e aulas organizados.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="offer">
+
+<h2>Oferta Especial</h2>
+
+<div class="old">
+De R$197
+</div>
+
+<div class="price">
+R$47
+</div>
+
+<ul class="list">
+<li>✅ Curso Completo</li>
+<li>✅ Bônus IA</li>
+<li>✅ Acesso Imediato</li>
+<li>✅ Método Validado</li>
+<li>✅ Estrutura Completa</li>
+</ul>
+
+<a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
+GARANTIR MEU ACESSO
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+<h2>Perguntas Frequentes</h2>
+</div>
+
+<div class="faq">
+
+<details>
+<summary>É para iniciantes?</summary>
+<p>Sim. Você pode começar apenas com uma ideia.</p>
+</details>
+
+<details>
+<summary>Preciso saber usar IA?</summary>
+<p>Não. O curso mostra como usar de forma simples.</p>
+</details>
+
+<details>
+<summary>Quando recebo acesso?</summary>
+<p>Logo após a confirmação da compra.</p>
+</details>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="footer-cta">
+
+<h2>
+Seu curso não precisa continuar apenas na sua cabeça.
+</h2>
+
+<a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
+COMEÇAR AGORA
+</a>
+
+</section>
+
+</body>
+</html>
