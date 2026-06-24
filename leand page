@@ -1,536 +1,682 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Do Zero ao Curso Estruturado</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <title>Do Zero ao Curso Estruturado</title>
 
-<style>
+  <meta name="description" content="Aprenda a transformar seu conhecimento em um curso online claro, organizado e pronto para vender.">
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Inter',sans-serif;
-}
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-body{
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
 
-.gradient-bg{
-position:fixed;
-width:100%;
-height:100%;
-z-index:-1;
-background:
-radial-gradient(circle at 20% 20%, rgba(37,99,255,.25), transparent 30%),
-radial-gradient(circle at 80% 30%, rgba(255,184,0,.15), transparent 25%),
-radial-gradient(circle at 50% 80%, rgba(37,99,255,.15), transparent 30%),
-#050816;
-}
+    html {
+      scroll-behavior: smooth;
+    }
 
-.container{
-width:90%;
-max-width:1200px;
-margin:auto;
-}
+    body {
+      background: #050816;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-.hero{
-padding:100px 0;
-}
+    .gradient-bg {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(37,99,255,.25), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(255,184,0,.18), transparent 25%),
+        radial-gradient(circle at 50% 80%, rgba(37,99,255,.18), transparent 30%),
+        #050816;
+    }
 
-.hero-content{
-display:grid;
-grid-template-columns:1fr 500px;
-gap:60px;
-align-items:center;
-}
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-.badge{
-display:inline-block;
-padding:12px 20px;
-border-radius:999px;
-background:rgba(255,184,0,.15);
-border:1px solid rgba(255,184,0,.4);
-color:#ffb800;
-font-weight:700;
-margin-bottom:25px;
-}
+    .hero {
+      padding: 90px 0 80px;
+    }
 
-h1{
-font-size:68px;
-line-height:1;
-font-weight:900;
-margin-bottom:25px;
-}
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 480px;
+      gap: 60px;
+      align-items: center;
+    }
 
-.highlight{
-color:#ffb800;
-}
+    .badge {
+      display: inline-block;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: rgba(255,184,0,.15);
+      border: 1px solid rgba(255,184,0,.45);
+      color: #ffb800;
+      font-weight: 800;
+      margin-bottom: 25px;
+      font-size: 15px;
+    }
 
-.subtitle{
-font-size:22px;
-line-height:1.7;
-color:#b8c3e4;
-margin-bottom:35px;
-}
+    h1 {
+      font-size: 64px;
+      line-height: 1;
+      font-weight: 900;
+      margin-bottom: 25px;
+      letter-spacing: -2px;
+    }
 
-.btn{
-display:inline-block;
-padding:20px 35px;
-border-radius:16px;
-background:linear-gradient(135deg,#ffb800,#ff8c00);
-color:#000;
-font-weight:900;
-text-decoration:none;
-font-size:18px;
-box-shadow:0 0 40px rgba(255,184,0,.35);
-transition:.3s;
-}
+    .highlight {
+      color: #ffb800;
+    }
 
-.btn:hover{
-transform:translateY(-5px);
-box-shadow:0 0 60px rgba(255,184,0,.7);
-}
+    .subtitle {
+      font-size: 21px;
+      line-height: 1.7;
+      color: #b8c3e4;
+      margin-bottom: 35px;
+      max-width: 650px;
+    }
 
-.hero-image{
-position:relative;
-}
+    .btn {
+      display: inline-block;
+      padding: 20px 34px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #ffb800, #ff8c00);
+      color: #000;
+      font-weight: 900;
+      text-decoration: none;
+      font-size: 18px;
+      box-shadow: 0 0 40px rgba(255,184,0,.35);
+      transition: .3s;
+    }
 
-.hero-image img{
-width:100%;
-border-radius:25px;
-box-shadow:
-0 0 80px rgba(37,99,255,.4),
-0 0 120px rgba(255,184,0,.15);
-}
+    .btn:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 60px rgba(255,184,0,.7);
+    }
 
-section{
-padding:100px 0;
-}
+    .hero-box {
+      background: linear-gradient(145deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 30px;
+      padding: 35px;
+      box-shadow:
+        0 0 80px rgba(37,99,255,.35),
+        0 0 100px rgba(255,184,0,.08);
+      position: relative;
+      overflow: hidden;
+    }
 
-.section-title{
-text-align:center;
-max-width:900px;
-margin:auto auto 60px;
-}
+    .hero-box::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      background: rgba(255,184,0,.15);
+      border-radius: 50%;
+      right: -60px;
+      top: -60px;
+      filter: blur(10px);
+    }
 
-.section-title h2{
-font-size:52px;
-margin-bottom:20px;
-}
+    .mini-title {
+      color: #ffb800;
+      font-weight: 900;
+      font-size: 18px;
+      margin-bottom: 25px;
+      position: relative;
+    }
 
-.section-title p{
-color:#b8c3e4;
-font-size:20px;
-}
+    .course-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      position: relative;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:25px;
-}
+    .course-step {
+      background: #111827;
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 18px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-.card{
-background:rgba(255,255,255,.04);
-backdrop-filter:blur(20px);
-padding:35px;
-border-radius:24px;
-border:1px solid rgba(255,255,255,.08);
-transition:.4s;
-}
+    .number {
+      width: 38px;
+      height: 38px;
+      min-width: 38px;
+      border-radius: 50%;
+      background: #ffb800;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+    }
 
-.card:hover{
-transform:translateY(-10px);
-border-color:#ffb800;
-}
+    .course-step h3 {
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
 
-.card h3{
-margin-bottom:15px;
-color:#ffb800;
-}
+    .course-step p {
+      font-size: 14px;
+      color: #b8c3e4;
+      line-height: 1.4;
+    }
 
-.card p{
-color:#b8c3e4;
-line-height:1.7;
-}
+    section {
+      padding: 90px 0;
+    }
 
-.flow{
-display:flex;
-justify-content:center;
-align-items:center;
-flex-wrap:wrap;
-gap:20px;
-}
+    .section-title {
+      text-align: center;
+      max-width: 900px;
+      margin: auto auto 60px;
+    }
 
-.step{
-padding:20px 30px;
-background:#111827;
-border-radius:20px;
-font-weight:800;
-}
+    .section-title h2 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      letter-spacing: -1px;
+    }
 
-.arrow{
-font-size:35px;
-color:#ffb800;
-}
+    .section-title p {
+      color: #b8c3e4;
+      font-size: 20px;
+      line-height: 1.6;
+    }
 
-.offer{
-max-width:850px;
-margin:auto;
-text-align:center;
-background:linear-gradient(135deg,#0d1737,#111827);
-padding:60px;
-border-radius:30px;
-border:1px solid rgba(255,184,0,.3);
-}
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
 
-.old{
-font-size:28px;
-text-decoration:line-through;
-color:#8091bf;
-}
+    .card {
+      background: rgba(255,255,255,.045);
+      backdrop-filter: blur(20px);
+      padding: 35px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,.08);
+      transition: .4s;
+    }
 
-.price{
-font-size:90px;
-font-weight:900;
-color:#ffb800;
-margin:10px 0;
-}
+    .card:hover {
+      transform: translateY(-10px);
+      border-color: #ffb800;
+    }
 
-.list{
-list-style:none;
-margin:35px 0;
-}
+    .card h3 {
+      margin-bottom: 15px;
+      color: #ffb800;
+      font-size: 22px;
+    }
 
-.list li{
-margin:12px 0;
-font-size:20px;
-}
+    .card p {
+      color: #b8c3e4;
+      line-height: 1.7;
+      font-size: 16px;
+    }
 
-.faq{
-max-width:900px;
-margin:auto;
-}
+    .flow {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-details{
-background:#111827;
-padding:20px;
-border-radius:16px;
-margin-bottom:15px;
-}
+    .step {
+      padding: 22px 32px;
+      background: #111827;
+      border-radius: 20px;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,.1);
+    }
 
-summary{
-cursor:pointer;
-font-weight:700;
-color:#ffb800;
-}
+    .arrow {
+      font-size: 35px;
+      color: #ffb800;
+      font-weight: 900;
+    }
 
-details p{
-margin-top:15px;
-color:#b8c3e4;
-}
+    .offer {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      background: linear-gradient(135deg, #0d1737, #111827);
+      padding: 60px;
+      border-radius: 30px;
+      border: 1px solid rgba(255,184,0,.35);
+      box-shadow: 0 0 80px rgba(0,0,0,.35);
+    }
 
-.footer-cta{
-text-align:center;
-padding:120px 20px;
-}
+    .offer h2 {
+      font-size: 44px;
+      margin-bottom: 20px;
+    }
 
-.footer-cta h2{
-font-size:60px;
-margin-bottom:25px;
-}
+    .old {
+      font-size: 28px;
+      text-decoration: line-through;
+      color: #8091bf;
+      margin-bottom: 5px;
+    }
 
-.sticky{
-position:fixed;
-bottom:20px;
-left:50%;
-transform:translateX(-50%);
-background:#0d1737;
-padding:15px 20px;
-border-radius:18px;
-display:flex;
-gap:15px;
-align-items:center;
-z-index:999;
-border:1px solid rgba(255,184,0,.3);
-box-shadow:0 0 40px rgba(0,0,0,.4);
-}
+    .price {
+      font-size: 86px;
+      font-weight: 900;
+      color: #ffb800;
+      margin: 10px 0;
+      letter-spacing: -3px;
+    }
 
-.sticky a{
-padding:12px 18px;
-border-radius:10px;
-background:#ffb800;
-color:#000;
-text-decoration:none;
-font-weight:800;
-}
+    .list {
+      list-style: none;
+      margin: 35px 0;
+    }
 
-@media(max-width:1000px){
+    .list li {
+      margin: 12px 0;
+      font-size: 20px;
+      color: #e9eeff;
+    }
 
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
+    .faq {
+      max-width: 900px;
+      margin: auto;
+    }
 
-h1{
-font-size:48px;
-}
+    details {
+      background: #111827;
+      padding: 22px;
+      border-radius: 16px;
+      margin-bottom: 15px;
+      border: 1px solid rgba(255,255,255,.08);
+    }
 
-.hero-image{
-max-width:450px;
-margin:auto;
-}
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      color: #ffb800;
+      font-size: 18px;
+    }
 
-.section-title h2{
-font-size:40px;
-}
+    details p {
+      margin-top: 15px;
+      color: #b8c3e4;
+      line-height: 1.7;
+    }
 
-.footer-cta h2{
-font-size:42px;
-}
+    .footer-cta {
+      text-align: center;
+      padding: 110px 20px 140px;
+    }
 
-.price{
-font-size:60px;
-}
+    .footer-cta h2 {
+      font-size: 56px;
+      max-width: 900px;
+      margin: auto auto 30px;
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
 
-}
+    .sticky {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #0d1737;
+      padding: 15px 20px;
+      border-radius: 18px;
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      z-index: 999;
+      border: 1px solid rgba(255,184,0,.35);
+      box-shadow: 0 0 40px rgba(0,0,0,.45);
+      font-weight: 800;
+    }
 
-</style>
+    .sticky a {
+      padding: 12px 18px;
+      border-radius: 10px;
+      background: #ffb800;
+      color: #000;
+      text-decoration: none;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    @media(max-width: 1000px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .subtitle {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      h1 {
+        font-size: 46px;
+      }
+
+      .hero-box {
+        max-width: 520px;
+        margin: auto;
+        text-align: left;
+      }
+
+      .section-title h2 {
+        font-size: 38px;
+      }
+
+      .footer-cta h2 {
+        font-size: 38px;
+      }
+
+      .price {
+        font-size: 64px;
+      }
+    }
+
+    @media(max-width: 600px) {
+      .hero {
+        padding: 70px 0 50px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        font-size: 18px;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .section-title p {
+        font-size: 17px;
+      }
+
+      .offer {
+        padding: 40px 24px;
+      }
+
+      .offer h2 {
+        font-size: 34px;
+      }
+
+      .price {
+        font-size: 56px;
+      }
+
+      .sticky {
+        width: 92%;
+        justify-content: space-between;
+        font-size: 14px;
+      }
+
+      .sticky a {
+        padding: 10px 12px;
+        font-size: 13px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div class="gradient-bg"></div>
-
-<div class="sticky">
-<span>🔥 Oferta R$47</span>
-<a href="https://pay.kiwify.com.br/ERtxmQX">Comprar Agora</a>
-</div>
-
-<section class="hero">
-
-<div class="container">
-
-<div class="hero-content">
-
-<div>
-
-<div class="badge">
-🚀 CURSO + IA + MÉTODO
-</div>
-
-<h1>
-Transforme seu conhecimento em um
-<span class="highlight">curso estruturado</span>
-pronto para vender
-</h1>
-
-<p class="subtitle">
-Pare de travar com ideias soltas.
-Aprenda um método simples para organizar módulos, aulas e toda a jornada do aluno utilizando Inteligência Artificial para acelerar o processo.
-</p>
-
-<a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
-QUERO ESTRUTURAR MEU CURSO
-</a>
-
-</div>
-
-<div class="hero-image">
-
-<img src="banner-curso.png">
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<h2>Você sabe ensinar. Falta estrutura.</h2>
-<p>
-O problema não é o conteúdo. O problema é transformar conhecimento em uma experiência organizada para o aluno.
-</p>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>❌ Ideias espalhadas</h3>
-<p>Você não sabe por onde começar.</p>
-</div>
-
-<div class="card">
-<h3>❌ Conteúdo demais</h3>
-<p>Tenta ensinar tudo e trava.</p>
-</div>
-
-<div class="card">
-<h3>❌ Curso confuso</h3>
-<p>Sem sequência lógica para o aluno.</p>
-</div>
-
-<div class="card">
-<h3>❌ Sem método</h3>
-<p>Não existe uma jornada clara.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<h2>Da ideia ao curso pronto</h2>
-</div>
-
-<div class="flow">
-
-<div class="step">IDEIA</div>
-<div class="arrow">→</div>
-
-<div class="step">IA</div>
-<div class="arrow">→</div>
-
-<div class="step">ESTRUTURA</div>
-<div class="arrow">→</div>
-
-<div class="step">CURSO</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<h2>O que você conquista</h2>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>✅ Tema Definido</h3>
-<p>Clareza total sobre o curso.</p>
-</div>
-
-<div class="card">
-<h3>✅ Público Definido</h3>
-<p>Saiba exatamente para quem ensinar.</p>
-</div>
-
-<div class="card">
-<h3>✅ Promessa Clara</h3>
-<p>Transformação bem definida.</p>
-</div>
-
-<div class="card">
-<h3>✅ Estrutura Pronta</h3>
-<p>Módulos e aulas organizados.</p>
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="offer">
-
-<h2>Oferta Especial</h2>
-
-<div class="old">
-De R$197
-</div>
-
-<div class="price">
-R$47
-</div>
-
-<ul class="list">
-<li>✅ Curso Completo</li>
-<li>✅ Bônus IA</li>
-<li>✅ Acesso Imediato</li>
-<li>✅ Método Validado</li>
-<li>✅ Estrutura Completa</li>
-</ul>
-
-<a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
-GARANTIR MEU ACESSO
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-<section>
-
-<div class="container">
-
-<div class="section-title">
-<h2>Perguntas Frequentes</h2>
-</div>
-
-<div class="faq">
-
-<details>
-<summary>É para iniciantes?</summary>
-<p>Sim. Você pode começar apenas com uma ideia.</p>
-</details>
-
-<details>
-<summary>Preciso saber usar IA?</summary>
-<p>Não. O curso mostra como usar de forma simples.</p>
-</details>
-
-<details>
-<summary>Quando recebo acesso?</summary>
-<p>Logo após a confirmação da compra.</p>
-</details>
-
-</div>
-
-</div>
-
-</section>
-
-<section class="footer-cta">
-
-<h2>
-Seu curso não precisa continuar apenas na sua cabeça.
-</h2>
-
-<a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
-COMEÇAR AGORA
-</a>
-
-</section>
+  <div class="gradient-bg"></div>
+
+  <div class="sticky">
+    <span>🔥 Oferta R$47</span>
+    <a href="https://pay.kiwify.com.br/ERtxmQX">Comprar Agora</a>
+  </div>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+
+        <div>
+          <div class="badge">
+            🚀 CURSO + IA + MÉTODO
+          </div>
+
+          <h1>
+            Transforme seu conhecimento em um
+            <span class="highlight">curso estruturado</span>
+            pronto para vender
+          </h1>
+
+          <p class="subtitle">
+            Pare de travar com ideias soltas. Aprenda um método simples para organizar tema, público, promessa, módulos e aulas, usando Inteligência Artificial para acelerar o processo.
+          </p>
+
+          <a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
+            QUERO ESTRUTURAR MEU CURSO
+          </a>
+        </div>
+
+        <div class="hero-box">
+          <div class="mini-title">DO ZERO AO CURSO ESTRUTURADO</div>
+
+          <div class="course-steps">
+            <div class="course-step">
+              <div class="number">1</div>
+              <div>
+                <h3>Clareza da ideia</h3>
+                <p>Defina o tema certo e pare de tentar ensinar tudo.</p>
+              </div>
+            </div>
+
+            <div class="course-step">
+              <div class="number">2</div>
+              <div>
+                <h3>Público e promessa</h3>
+                <p>Entenda para quem é o curso e qual transformação ele entrega.</p>
+              </div>
+            </div>
+
+            <div class="course-step">
+              <div class="number">3</div>
+              <div>
+                <h3>Módulos e aulas</h3>
+                <p>Organize o conteúdo em uma sequência simples e lógica.</p>
+              </div>
+            </div>
+
+            <div class="course-step">
+              <div class="number">4</div>
+              <div>
+                <h3>Curso pronto para vender</h3>
+                <p>Saia com uma estrutura clara, organizada e profissional.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Você sabe ensinar. Falta estrutura.</h2>
+        <p>
+          O problema não é falta de conhecimento. O problema é transformar esse conhecimento em uma jornada organizada para o aluno.
+        </p>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>❌ Ideias espalhadas</h3>
+          <p>Você tem várias ideias, mas não sabe por onde começar nem o que colocar primeiro.</p>
+        </div>
+
+        <div class="card">
+          <h3>❌ Conteúdo demais</h3>
+          <p>Tenta ensinar tudo de uma vez e acaba criando um curso confuso e pesado.</p>
+        </div>
+
+        <div class="card">
+          <h3>❌ Falta de sequência</h3>
+          <p>O aluno não entende o caminho porque o curso não tem começo, meio e fim.</p>
+        </div>
+
+        <div class="card">
+          <h3>❌ Promessa fraca</h3>
+          <p>Sem uma promessa clara, fica difícil vender e mostrar valor para o comprador.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Da ideia ao curso estruturado</h2>
+        <p>
+          Você segue um processo simples para transformar conhecimento bruto em uma estrutura clara de curso.
+        </p>
+      </div>
+
+      <div class="flow">
+        <div class="step">IDEIA</div>
+        <div class="arrow">→</div>
+        <div class="step">CLAREZA</div>
+        <div class="arrow">→</div>
+        <div class="step">ESTRUTURA</div>
+        <div class="arrow">→</div>
+        <div class="step">CURSO</div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>O que você vai construir</h2>
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <h3>✅ Tema definido</h3>
+          <p>Você vai escolher um recorte claro para o seu curso, sem ficar amplo demais.</p>
+        </div>
+
+        <div class="card">
+          <h3>✅ Público certo</h3>
+          <p>Você vai entender exatamente quem é o aluno ideal e qual problema ele quer resolver.</p>
+        </div>
+
+        <div class="card">
+          <h3>✅ Promessa clara</h3>
+          <p>Você vai definir uma transformação objetiva para comunicar melhor o valor do curso.</p>
+        </div>
+
+        <div class="card">
+          <h3>✅ Módulos e aulas</h3>
+          <p>Você vai organizar o conteúdo em etapas simples, com uma progressão lógica.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="offer">
+        <h2>Oferta Especial</h2>
+
+        <div class="old">De R$197</div>
+
+        <div class="price">R$47</div>
+
+        <ul class="list">
+          <li>✅ Curso completo</li>
+          <li>✅ Método passo a passo</li>
+          <li>✅ Uso de IA para acelerar a estrutura</li>
+          <li>✅ Organização de módulos e aulas</li>
+          <li>✅ Acesso imediato</li>
+        </ul>
+
+        <a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
+          GARANTIR MEU ACESSO
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Perguntas Frequentes</h2>
+      </div>
+
+      <div class="faq">
+        <details>
+          <summary>Esse curso é para iniciantes?</summary>
+          <p>Sim. Você pode começar apenas com uma ideia de curso e organizar tudo passo a passo.</p>
+        </details>
+
+        <details>
+          <summary>Preciso saber usar Inteligência Artificial?</summary>
+          <p>Não. O curso mostra como usar a IA de forma simples para ajudar na organização da estrutura.</p>
+        </details>
+
+        <details>
+          <summary>O que vou ter ao final do curso?</summary>
+          <p>Você terá uma estrutura clara do seu curso, com tema, público, promessa, módulos e aulas organizadas.</p>
+        </details>
+
+        <details>
+          <summary>Quando recebo o acesso?</summary>
+          <p>O acesso é liberado após a confirmação da compra pela plataforma.</p>
+        </details>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="footer-cta">
+    <h2>
+      Seu curso não precisa continuar apenas na sua cabeça.
+    </h2>
+
+    <a href="https://pay.kiwify.com.br/ERtxmQX" class="btn">
+      COMEÇAR AGORA
+    </a>
+  </section>
 
 </body>
 </html>
